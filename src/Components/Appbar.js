@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import icon from './icon.gif';
+import icon from './image.svg';
 import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
@@ -23,7 +23,7 @@ const theme = createTheme({
 });
 
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Create', 'View', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -49,7 +49,7 @@ function ResponsiveAppBar() {
     <AppBar position="static" color= {theme.secondary} >
       <Container maxWidth="xl" sx={{color: 'white'}}>
         <Toolbar disableGutters>
-        <img src={icon} />
+        
           <Typography
             variant="h6"
             noWrap
@@ -61,11 +61,11 @@ function ResponsiveAppBar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'black',
+              color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            Hello World
+           
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
