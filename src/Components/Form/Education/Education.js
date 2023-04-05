@@ -1,6 +1,14 @@
 import {Typography, TextField,Button,Grid,Container} from '@mui/material'
-import SplitButton from '../../Dropdown';
-const Education=()=>{
+import SplitButton from './Dropdown';
+const Education=({education,setEducation})=>{
+    const handleChange=(e)=>{
+        e.preventDefault();
+        setEducation({...education,[e.target.name]:e.target.value})
+    }
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        console.log(education);
+    }
     return(
         <Container >
             
@@ -10,29 +18,29 @@ const Education=()=>{
          
         <Grid item xs={6}>
             <Typography variant="h6" align='left' >School Name</Typography>
-            <TextField id="outlined-basic" variant="outlined" label= "Enter your school name" fullWidth/>
+            <TextField name="school" id="outlined-basic" variant="outlined" label= "Enter your school name" fullWidth/>
             </Grid> 
             <Grid item xs={6}>
                         <Typography  variant="h6" align='left'>School Location</Typography>   
-            <TextField id="outlined-basic" variant="outlined" fullWidth label= "Enter School location"/>
+            <TextField name="location" id="outlined-basic" variant="outlined" fullWidth label= "Enter School location"/>
             </Grid>
             <Grid item xs={6}>
             <Typography variant="h6" align='left' >Degree</Typography>
-            <SplitButton/>
+            <SplitButton name="degree" education={education} seteducation={setEducation}/>
             </Grid>
             <Grid item xs={6}>
                 </Grid>
             <Grid item xs={6}>   
             <Typography variant="h6" align='left' >Field Of Study</Typography>
-            <TextField id="outlined-basic" variant="outlined" label= "e.g. Computer Science" fullWidth/> 
+            <TextField name="field" id="outlined-basic" variant="outlined" label= "e.g. Computer Science" fullWidth/> 
             </Grid>  
             <Grid item xs={3}>
             <Typography variant="h6" align='left' >Graduation Start Date</Typography>
-            <TextField id="outlined-basic" variant="outlined" fullWidth/> 
+            <TextField name="startYear" id="outlined-basic" variant="outlined" fullWidth/> 
             </Grid>
             <Grid item xs={3}>
             <Typography variant="h6" align='left' >Graduation end date</Typography>
-            <TextField id="outlined-basic" variant="outlined"  fullWidth/>    
+            <TextField name="endYear" id="outlined-basic" variant="outlined"  fullWidth/>    
             </Grid>
             <Grid item xs={6}>
             <Button sx={{ marginTop: 2 ,marginRight: 30}}variant="contained" color="primary" size='large'>Back</Button>

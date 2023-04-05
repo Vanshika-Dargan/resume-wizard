@@ -4,6 +4,7 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import InteractiveList from "./Listitems";
  
+
 const Skills = () => {
     const [skills, setSkills] = useState([]);
     const [totalskills, setTotalskills] = useState([]);
@@ -16,10 +17,7 @@ const Skills = () => {
       setSkills(event.target.value.split(","));
     };
   
-    useEffect(() => {
-    //   console.log(totalskills);
-    }, [totalskills]);
- 
+    
     return (
         <div>
             <Typography variant="h4" align='center' sx={{margin:"30px  0 ",marginRight:"100px"}} >Tell us about your skills</Typography>
@@ -32,7 +30,7 @@ const Skills = () => {
                 }
             }><RemoveCircleIcon/></Button>
             <Container align="center" sx={{marginLeft:"200px"}}>
-            <InteractiveList totalskills={totalskills} />
+            <InteractiveList totalskills={totalskills} settotalskills={setTotalskills} />
             </Container>
         </div>
     )

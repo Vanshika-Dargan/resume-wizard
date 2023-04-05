@@ -11,20 +11,24 @@ import MenuList from '@mui/material/MenuList';
 
 const options = ['Bachelors of Technology(B.Tech)', 'B.Ed', 'B.Sc','B.Com','BBA'];
 
-export default function SplitButton() {
+export default function SplitButton({education,setEducation}) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   const handleClick = () => {
-    console.info(`You clicked ${options[selectedIndex]}`);
+    console.log(education);
   };
 
   const handleMenuItemClick = (event, index) => {
+    event.preventDefault();
     setSelectedIndex(index);
+    console.log(options[index]);
+    setEducation({ ...education, degree : options[index] });
     setOpen(false);
+    console.log(education);
   };
-
+  
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
