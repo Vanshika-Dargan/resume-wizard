@@ -21,21 +21,21 @@ const Form=()=>{
             degree:'',
             field:'',
             startYear:'',
-            endYear:'',
-            grade:''
+            endYear:''
         });
-        const [work,setwork]=useState({
-            company:'',
-            position:'',
-            startYear:'',
-            endYear:'',
-            description:''
+        const [work,setWork]=useState({
+            title:'',
+            organization:'',
+            city:'',
+            country:'',
+            startDate:'',
+            endDate:''
         });
     return(
         <div>
             {/* <Contact contact={contact} setContact={setContact} /> */}
-            <Education education={education} seteducation={setEducation}/>
-            {/* <Work/> */}
+            {/* <Education education={education} setEducation={setEducation}/> */}
+            <Work work={work} setWork={setWork}/>
             {/* <Skills/> */}
         </div>
     )

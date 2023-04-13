@@ -1,7 +1,6 @@
 import {Typography, TextField,Button,Grid,Container} from '@mui/material'
-import { useState } from 'react'
 const Contact=({contact,setContact})=>{
-    
+    console.log(typeof(setContact));
     const handleChange=(e)=>{
         e.preventDefault();
         setContact({...contact,[e.target.name]:e.target.value})

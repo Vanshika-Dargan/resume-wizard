@@ -1,6 +1,7 @@
 import {Typography, TextField,Button,Grid,Container} from '@mui/material'
 import SplitButton from './Dropdown';
 const Education=({education,setEducation})=>{
+    // console.log(typeof(setEducation));
     const handleChange=(e)=>{
         e.preventDefault();
         setEducation({...education,[e.target.name]:e.target.value})
@@ -11,46 +12,47 @@ const Education=({education,setEducation})=>{
     }
     return(
         <Container >
-            
         <Typography sx={{ lineHeight: '3', fontFamily: "inherit" ,fontWeight:'600'} }variant="h4" align='left'>Tell us about your education</Typography>
-           
+        <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>
          
         <Grid item xs={6}>
             <Typography variant="h6" align='left' >School Name</Typography>
-            <TextField name="school" id="outlined-basic" variant="outlined" label= "Enter your school name" fullWidth/>
+            <TextField name="school" id="outlined-basic" variant="outlined" label= "Enter your school name" fullWidth onChange={handleChange}/>
             </Grid> 
             <Grid item xs={6}>
                         <Typography  variant="h6" align='left'>School Location</Typography>   
-            <TextField name="location" id="outlined-basic" variant="outlined" fullWidth label= "Enter School location"/>
+            <TextField name="location" id="outlined-basic" variant="outlined" fullWidth label= "Enter School location" onChange={handleChange}/>
             </Grid>
             <Grid item xs={6}>
             <Typography variant="h6" align='left' >Degree</Typography>
-            <SplitButton name="degree" education={education} seteducation={setEducation}/>
+            
+            <SplitButton name="degree" education={education} setEducation={setEducation}/>
             </Grid>
             <Grid item xs={6}>
                 </Grid>
             <Grid item xs={6}>   
             <Typography variant="h6" align='left' >Field Of Study</Typography>
-            <TextField name="field" id="outlined-basic" variant="outlined" label= "e.g. Computer Science" fullWidth/> 
+            <TextField name="field" id="outlined-basic" variant="outlined" label= "e.g. Computer Science" fullWidth onChange={handleChange}/> 
             </Grid>  
             <Grid item xs={3}>
             <Typography variant="h6" align='left' >Graduation Start Date</Typography>
-            <TextField name="startYear" id="outlined-basic" variant="outlined" fullWidth/> 
+            <TextField name="startYear" id="outlined-basic" variant="outlined" fullWidth onChange={handleChange}/> 
             </Grid>
             <Grid item xs={3}>
             <Typography variant="h6" align='left' >Graduation end date</Typography>
-            <TextField name="endYear" id="outlined-basic" variant="outlined"  fullWidth/>    
+            <TextField name="endYear" id="outlined-basic" variant="outlined"  fullWidth onChange={handleChange}/>    
             </Grid>
             <Grid item xs={6}>
             <Button sx={{ marginTop: 2 ,marginRight: 30}}variant="contained" color="primary" size='large'>Back</Button>
             </Grid>
             <Grid item xs={6}>
-            <Button sx={{ marginTop: 2 ,marginLeft: 30}}variant="contained" color="primary" size='large'>Next</Button>
+            <Button sx={{ marginTop: 2 ,marginLeft: 30}} type="submit" variant="contained" color="primary" size='large'>Next</Button>
             </Grid>
-            
+        
         
         </Grid>
+        </form>
         </Container>
     )
 }

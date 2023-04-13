@@ -17,16 +17,17 @@ export default function SplitButton({education,setEducation}) {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   const handleClick = () => {
-    console.log(education);
+    // console.log(education);
   };
 
   const handleMenuItemClick = (event, index) => {
     event.preventDefault();
     setSelectedIndex(index);
-    console.log(options[index]);
+    // console.log(options[index]);
+    // console.log(typeof(setEducation));
     setEducation({ ...education, degree : options[index] });
     setOpen(false);
-    console.log(education);
+    // console.log(education);
   };
   
   const handleToggle = () => {

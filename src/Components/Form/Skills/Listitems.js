@@ -16,7 +16,7 @@ const Demo = styled('div')(({ theme }) => ({
 
 
 export default function InteractiveList({totalskills,settotalskills}) {
-  // console.log(totalskills)
+  // console.log(typeof(totalskills));
   const [dense, setDense] = React.useState(false);
   const [secondary, setSecondary] = React.useState(false);
   const handleClick = (value) => {
